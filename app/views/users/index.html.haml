@@ -1,5 +1,3 @@
-= render :partial => 'common/home_button'
-
 %h2 Users
 
 %table.table.table-striped
@@ -8,6 +6,7 @@
       %th Name
       %th Email
       %th{:width => '150'} Actions
+
   %tbody
     - @users.each do |user|
       %tr

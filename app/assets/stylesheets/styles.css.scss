@@ -1,0 +1,11 @@
+// Import all the variables into the main css file.
+//@import "variables";
+
+// I gather this file is a starting point for the project.
+@import "bootstrap";
+
+// Include responsive Bootstrap styles
+@import "bootstrap-responsive";
+
+body { padding-top: 60px; }
+.row{margin-left: 0px;}

@@ -10,4 +10,12 @@
  *
  *= require_self
  *= require_tree .
- */
+*/
+
+.registrations .span12 a{
+  display: inline-block;
+  text-decoration: underline;
+}
+.registrations .span12 a:hover{
+  text-decoration: none;
+}
