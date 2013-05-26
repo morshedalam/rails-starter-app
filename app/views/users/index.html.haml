@@ -1,0 +1,22 @@
+= render :partial => 'common/home_button'
+
+%h2 Users
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th{:width => '150'} Actions
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to user.name, user_path(user)
+        %td= user.email
+        %td{:nowrap => 'nowrap'}
+          = link_to "Show", user_path(user)
+          |
+          = link_to "Edit", edit_user_path(user)
+          |
+          = link_to "Delete", user_path(user),
+          :method => :delete, :confirm => "Are you sure, you want to delete the user?"

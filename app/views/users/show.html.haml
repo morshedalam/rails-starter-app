@@ -1,0 +1,22 @@
+= render :partial => 'common/home_button'
+
+%h2
+  = @user.name
+
+.row
+  %table.table
+    %tr
+      %th{:width => '130'} First Name
+      %td= @user.first_name
+    %tr
+      %th Last name
+      %td{:style => "padding: 5px;"}= @user.last_name
+    %tr
+      %th Email
+      %td= @user.email
+
+.row.form-actions
+  = link_to "Back", users_path, :class => 'btn'
+  = link_to "Edit", edit_user_path(@user), :class => 'btn'
+  = link_to "Delete", user_path(@user), :class => 'btn',
+  :method => :delete, :confirm => "Are you sure, you want to delete the user?"
