@@ -12,10 +12,13 @@
  *= require_tree .
 */
 
-.registrations .span12 a{
+.registrations .row a, .passwords .row a, .sessions .row a{
   display: inline-block;
   text-decoration: underline;
 }
-.registrations .span12 a:hover{
+.registrations .row a:hover, .passwords .row a:hover, .sessions .row a:hover{
   text-decoration: none;
+}
+form.button_to, form.button_to div{
+  display: inline;
 }
