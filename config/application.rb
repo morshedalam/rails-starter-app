@@ -1,6 +1,12 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+# Pick the frameworks you want:
+#require 'rails/all'
+require "active_record/railtie"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "active_resource/railtie"
+require "sprockets/railtie"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -11,15 +17,16 @@ end
 
 module RailsStarterApp
   class Application < Rails::Application
+
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
       g.test_framework :rspec, fixture: true
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       g.view_specs false
       g.helper_specs false
-      g.stylesheets = false
-      g.javascripts = false
-      g.helper = false
+      #g.stylesheets = false
+      #g.javascripts = false
+      #g.helper = false
     end
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -28,6 +35,8 @@ module RailsStarterApp
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/lib)
+
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -72,5 +81,8 @@ module RailsStarterApp
 
     # Control Rails asset pipeline log. By default it remain turn on
     #config.quiet_assets = false
+
+    # Heroku requires this to be false
+    #config.assets.initialize_on_precompile=false
   end
 end

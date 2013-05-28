@@ -1,9 +1,7 @@
 RailsStarterApp::Application.routes.draw do
 
-  get "test/index"
-
   authenticated :user do
-    #root :to => 'users#index'
+    root :to => 'users#index'
   end
 
   devise_for :users
