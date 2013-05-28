@@ -1,18 +1,15 @@
 h1. Rails 3.2 starter application
 
-h2. Gems
+h4. Gems
 
 * "Devise":http://github.com/plataformatec/devise gives you ready-made authentication and user management.
 * "Twitter Bootstrap":http://twitter.github.com/bootstrap/ is a front-end framework for CSS styling.ement.
 * "RSpec":http://rspec.info/  is a popular alternative to the Test::Unit testing framework.
 * "Cucumber":http://cukes.info/ is used for Behaviour Driven Development.
 
-h2. TODO
+h4. TODO
 
-h4. Basic
-
-* Test suite setup
-* Using authorization
+* Authorization
 
 h4. Documentation
 
