@@ -26,7 +26,6 @@ end
 
 group :development do
   gem 'rename'
-  gem 'rb-readline'
   gem 'quiet_assets'
   gem 'binding_of_caller', '>= 0.7.1', :platforms => [:mri_19, :rbx]
 end

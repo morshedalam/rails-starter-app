@@ -92,15 +92,15 @@ When /^I sign up with an invalid email$/ do
   sign_up
 end
 
-When /^I sign up without a password confirmation$/ do
-  create_visitor
-  @visitor = @visitor.merge(:password_confirmation => "")
-  sign_up
-end
-
 When /^I sign up without a password$/ do
   create_visitor
   @visitor = @visitor.merge(:password => "")
+  sign_up
+end
+
+When /^I sign up without a password confirmation$/ do
+  create_visitor
+  @visitor = @visitor.merge(:password_confirmation => "")
   sign_up
 end
 
@@ -126,13 +126,14 @@ end
 
 When /^I edit my account details$/ do
   click_link "Edit account"
-  fill_in "user_first_name", :with => "newname"
+  fill_in "user_first_name", :with => "new first name"
+  fill_in "user_email", :with => "new_email@example.com"
   fill_in "user_current_password", :with => @visitor[:password]
   click_button "Update"
 end
 
 When /^I look at the list of users$/ do
-  visit '/'
+  visit '/users'
 end
 
 ### THEN ###
@@ -188,7 +189,8 @@ Then /^I should see an account edited message$/ do
   page.should have_content "You updated your account successfully."
 end
 
-Then /^I should see my name$/ do
+Then /^I should see my first name$/ do
   create_user
-  page.should have_content @user[:name]
+  sign_in
+  page.should have_content @user[:first_name]
 end
