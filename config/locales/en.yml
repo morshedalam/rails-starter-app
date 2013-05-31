@@ -2,4 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  unauthorized:
+    manage:
+      all: "You are not authorized as an administrator."
+      user: "You are not allowed to manage other user accounts."
+
+    update:
+      project: "Not allowed to update this project."
