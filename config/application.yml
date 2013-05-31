@@ -7,3 +7,7 @@ ADMIN_FIRST_NAME: Morshed
 ADMIN_LAST_NAME: Alam
 ADMIN_EMAIL: morshed@nsbench.com
 ADMIN_PASSWORD: morshed
+USER_FIRST_NAME: user
+USER_EMAIL: user@nsbench.com
+USER_PASSWORD: userpass
+ROLES: [admin, user]
