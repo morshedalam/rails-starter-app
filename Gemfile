@@ -13,8 +13,12 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'bootstrap-sass', '>= 2.3.0.0'
-gem 'devise', '>= 2.2.3'
 gem 'figaro', '>=0.6.3'
+gem 'devise', '>= 2.2.3'
+gem 'cancan'
+gem 'rolify', :git => 'git://github.com/EppO/rolify.git'
+
+gem 'simple_form', '>= 2.1.0'
 
 
 group :development, :test do
