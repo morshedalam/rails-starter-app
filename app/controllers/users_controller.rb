@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
   def update
     authorize! :update, @user
-
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user], :as => :admin)
       redirect_to users_path, :notice => "User role updated."

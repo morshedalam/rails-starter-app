@@ -1,7 +1,6 @@
 RailsStarterApp::Application.routes.draw do
 
   authenticated :user do
-    #root :to => 'users#index'
   end
 
   devise_for :users
