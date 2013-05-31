@@ -104,4 +104,14 @@ describe User do
     end
   end
 
+  describe "roles" do
+    before(:each) do
+      @user = User.create!(@attr)
+    end
+
+    it "should have user role by default" do
+      @user.has_role?(:user).should be_true
+    end
+  end
+
 end

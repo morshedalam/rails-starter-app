@@ -7,5 +7,17 @@ FactoryGirl.define do
     email 'morshed@nsbench.com'
     password 'morshed'
     password_confirmation 'morshed'
+
+    factory :admin do
+      after(:create) { |user| user.add_role(:admin) }
+    end
+  end
+
+  factory :another_user, class: User do
+    first_name 'Morshed'
+    last_name 'Alam'
+    email 'anotheruser@nsbench.com'
+    password 'morshed'
+    password_confirmation 'morshed'
   end
 end
