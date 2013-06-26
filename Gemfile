@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3', :group => :production
+
 gem 'rails', '3.2.13'
-gem 'sqlite3'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
@@ -20,8 +21,13 @@ gem 'rolify', :git => 'git://github.com/EppO/rolify.git'
 
 gem 'simple_form', '>= 2.1.0'
 
+# Gems for production
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails', '>= 2.12.2'
   gem 'factory_girl_rails', '>= 4.2.0'
   gem 'annotate'
@@ -42,19 +48,3 @@ group :test do
   gem 'launchy', '>= 2.2.0'
   gem 'capybara', '>= 2.0.3'
 end
-#
-#
-## To use ActiveModel has_secure_password
-## gem 'bcrypt-ruby', '~> 3.0.0'
-#
-## To use Jbuilder templates for JSON
-## gem 'jbuilder'
-#
-## Use unicorn as the app server
-## gem 'unicorn'
-#
-## Deploy with Capistrano
-## gem 'capistrano'
-#
-## To use debugger
-## gem 'debugger'
